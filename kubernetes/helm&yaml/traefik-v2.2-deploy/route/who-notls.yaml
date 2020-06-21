@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`www.willants.com`) && PathPrefix(`/notls`)
+  - match: Host(`willants.com`) && PathPrefix(`/notls`)
     kind: Rule
     services:
     - name: whoami

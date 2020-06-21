@@ -8,7 +8,7 @@ spec:
   tls:
     certResolver: dnspod
   routes:
-    - match: Host(`willants.com`)
+    - match: Host(`willants.com`)  && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
       kind: Rule
       services:
         - name: traefik

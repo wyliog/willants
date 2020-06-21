@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`www.willants.com`) && PathPrefix(`/tls`)
+  - match: Host(`willants.com`) && PathPrefix(`/tls`)
     kind: Rule
     services:
     - name: whoami
