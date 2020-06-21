@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard-route
+spec:
+  entryPoints:
+  - websecure
+  tls:
+    certResolver: dnspod
+  routes:
+    - match: Host(`willants.com`)
+      kind: Rule
+      services:
+        - name: traefik
+          port: 8080

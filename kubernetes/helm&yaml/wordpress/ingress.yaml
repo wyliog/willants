@@ -1,0 +1,15 @@
+# dashboard.yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: dashboard
+spec:
+  entryPoints:
+    - 80
+    - 443
+  routes:
+    - match: Host(`willants.com`) && (PathPrefix(`/`))
+      kind: Rule
+      services:
+        - name: wordpress
+          kind: TraefikService

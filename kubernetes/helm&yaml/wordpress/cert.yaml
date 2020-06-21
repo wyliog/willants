@@ -1,0 +1,9 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: willants-cert
+spec:
+  commonName: willants
+  secretName: willants-cert
+  issuerRef:
+    name: letsencrypt-staging

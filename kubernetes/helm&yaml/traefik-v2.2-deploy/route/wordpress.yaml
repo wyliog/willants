@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: wordpress 
+spec:
+  entryPoints:
+  - websecure
+  tls:
+    certResolver: dnspod
+  routes:
+  - match: Host(`www.willants.com`) 
+    kind: Rule
+    services:
+      - name: wordpress
+        port: 443
